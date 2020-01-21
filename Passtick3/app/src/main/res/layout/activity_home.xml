@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home">
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical">
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="PassTick"
+           android:textSize="35sp"
+           android:textColor="#7A3803"
+           android:textStyle="bold"
+           android:layout_gravity="center_horizontal"
+           android:layout_marginTop="30dp"/>
+
+       <ImageView
+           android:layout_width="280dp"
+           android:layout_height="250dp"
+           android:layout_gravity="center_horizontal"
+           android:src="@drawable/logo2" />
+       <FrameLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center_horizontal"
+           >
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="340dp"
+               android:layout_height="140dp"
+               app:cardBackgroundColor="#FDEFB2"
+               >
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="ยอดเงินทั้งหมด"
+                   android:textSize="20sp"
+                   android:layout_margin="20dp"
+                   android:textColor="#7A3803" />
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center_horizontal"
+                   android:text="246,482 บาท"
+                   android:textSize="20sp"
+                   android:layout_marginTop="60dp"
+                   android:textColor="#7A3803" />
+           </androidx.cardview.widget.CardView>
+
+       </FrameLayout>
+       <FrameLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center_horizontal"
+           android:layout_marginTop="20dp"
+           >
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="340dp"
+               android:layout_height="140dp"
+               app:cardBackgroundColor="#FDEFB2"
+               >
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="จำนวนพลาสติกที่ลดการใช้"
+                   android:textSize="20sp"
+                   android:layout_margin="20dp"
+                   android:textColor="#7A3803" />
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center_horizontal"
+                   android:text="123,456 ชิ้น"
+                   android:textSize="20sp"
+                   android:layout_marginTop="60dp"
+                   android:textColor="#7A3803" />
+           </androidx.cardview.widget.CardView>
+
+       </FrameLayout>
+
+
+
+
+   </LinearLayout>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom_navigation"
+        app:itemBackground="@android:color/holo_orange_light"
+        app:itemTextColor="@drawable/selector"
+        app:itemIconTint="@drawable/selector"
+        app:menu="@menu/menu_navigation"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

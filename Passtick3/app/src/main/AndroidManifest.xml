@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".QRActivity"></activity>
+        <activity android:name=".shop"></activity>
+        <activity android:name=".rank" />
+        <activity android:name=".Home" />
+        <activity android:name=".QRActivity" />
         <activity android:name=".FormActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
