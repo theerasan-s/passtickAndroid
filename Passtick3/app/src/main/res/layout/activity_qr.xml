@@ -30,7 +30,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
+<<<<<<< HEAD
             android:src="@drawable/qr" />
+=======
+            android:src="@drawable/qr_code_test" />
+>>>>>>> 6682ba36894acbbb739f339358074cd1e21b63cf
 
 
     </LinearLayout>
