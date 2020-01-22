@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Passtick</string>
+    <string name="app_name" translatable="false">Passtick</string>
     <string name="qr_code">แสกน QR Code</string>
     <string name="collect">สะสมยอดลดพลาสติก</string>
     <string name="shop_title">ร้าน :</string>
@@ -8,4 +8,5 @@
     <string name="confirm">ยืนยัน</string>
     <string name="thanks">ขอบคุณที่รักสิ่งแวดล้อม</string>
     <string name="back_to_home">กลับสู่หน้าหลัก</string>
+    <string name="logo" translatable="false">logo</string>
 </resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="back_to_home">Back to home</string>
+    <string name="confirm">Confirm</string>
+    <string name="qr_code">Scan QR Code</string>
+    <string name="shop_name">อีท แอท โฮม</string>
+    <string name="shop_title">Shop:</string>
+    <string name="thanks">Thanks for helping environment</string>
+    <string name="amount">Amount(pieces)</string>
+    <string name="collect">Collecting  the number of reduced plastic</string>
+</resources>
