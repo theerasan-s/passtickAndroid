@@ -23,7 +23,6 @@
         <ImageView
             android:layout_width="300dp"
             android:layout_height="285dp"
-            android:Width="10dp"
             android:src="@drawable/logo" />
 
         <Button

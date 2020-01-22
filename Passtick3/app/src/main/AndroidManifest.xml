@@ -9,13 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
         <activity android:name=".shop"></activity>
         <activity android:name=".rank" />
         <activity android:name=".Home" />
-=======
         <activity android:name=".ThanksActivity"></activity>
->>>>>>> fcc70f23ab10c278cf89abdbcc028711c31640bd
         <activity android:name=".QRActivity" />
         <activity android:name=".FormActivity" />
         <activity android:name=".MainActivity">
