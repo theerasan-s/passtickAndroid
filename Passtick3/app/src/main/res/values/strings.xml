@@ -8,5 +8,8 @@
     <string name="confirm">ยืนยัน</string>
     <string name="thanks">ขอบคุณที่รักสิ่งแวดล้อม</string>
     <string name="back_to_home">กลับสู่หน้าหลัก</string>
+    <string name="ranking">การจัดอันดับ</string>
+    <string name="shop">ร้านค้า</string>
+    <string name="user">ผู้ใช้งาน</string>
     <string name="logo" translatable="false">logo</string>
 </resources>

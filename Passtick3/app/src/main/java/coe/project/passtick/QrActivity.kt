@@ -3,7 +3,7 @@ package coe.project.passtick
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class QRActivity : AppCompatActivity() {
+class QrActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
