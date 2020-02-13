@@ -12,4 +12,5 @@
     <string name="shop">ร้านค้า</string>
     <string name="user">ผู้ใช้งาน</string>
     <string name="logo" translatable="false">logo</string>
+    <string name="home_head">Passtick</string>
 </resources>
