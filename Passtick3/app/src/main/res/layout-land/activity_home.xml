@@ -51,7 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:text="@string/money"
+            android:text="@string/total_money"
             android:textColor="#7A3803"
             android:textSize="20sp" />
 
@@ -83,7 +83,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:text="@string/reduce"
+            android:text="@string/reduce_plastic"
             android:textColor="#7A3803"
             android:textSize="20sp" />
 

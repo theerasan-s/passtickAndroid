@@ -13,4 +13,12 @@
     <string name="user">ผู้ใช้งาน</string>
     <string name="logo" translatable="false">logo</string>
     <string name="home_head">Passtick</string>
+    <string name="total_money">ยอดเงินรวม</string>
+    <string name="money_num">0</string>
+    <string name="unit">บาท</string>
+    <string name="reduce_plastic">จำนวนพลาสติกที่ลด</string>
+    <string name="reduce_num">0</string>
+    <string name="plastic_unit">ชิ้น</string>
+    <string name="rank">Ranking</string>
+    <string name="shoplist">ร้านค้า</string>
 </resources>
