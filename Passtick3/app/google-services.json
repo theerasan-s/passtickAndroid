@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "427787465303",
+    "firebase_url": "https://passtick2.firebaseio.com",
+    "project_id": "passtick2",
+    "storage_bucket": "passtick2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:427787465303:android:7172652b668abf577ae912",
+        "android_client_info": {
+          "package_name": "coe.project.passtick"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "427787465303-a9aaodm8poab7e6nk3v2ql2cg1v05nui.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "coe.project.passtick",
+            "certificate_hash": "cbcee8397a6e53910836295b30c3d8a3c9bb3b6b"
+          }
+        },
+        {
+          "client_id": "427787465303-n526b3o2575q8gutavgmt0b66fnpvcj8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrNQJA8MCxAgqDjUrxE5Hb0bJnQjUHbdI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "427787465303-n526b3o2575q8gutavgmt0b66fnpvcj8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

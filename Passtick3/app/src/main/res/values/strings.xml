@@ -21,4 +21,10 @@
     <string name="plastic_unit">ชิ้น</string>
     <string name="rank">Ranking</string>
     <string name="shoplist">ร้านค้า</string>
+    <string name="user_ranking">การจัดอันดับ</string>
+    <string name="_description">profile</string>
+    <string name="shops_name">shop</string>
+    <string name="nearby_shop">ร้านค้าที่อยู่ใกล้</string>
+    <string name="test">test</string>
+    <string name="username">userA</string>
 </resources>
