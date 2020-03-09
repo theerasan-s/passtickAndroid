@@ -9,9 +9,11 @@ import com.google.firebase.database.*
 import kotlin.math.log
 
 class Home : AppCompatActivity() {
-    private lateinit var recyclerView: RecyclerView
+    private lateinit var shopRecyclerView: RecyclerView
     private lateinit var userRecyclerView: RecyclerView
-    private lateinit var database: DatabaseReference
+    private lateinit var shopDatabase: DatabaseReference
+    private var shopList = mutableListOf<Shops>()
+
 
     //var shopName = arrayListOf<String>("shop1","shop2","shop3")
     //var shopImage = arrayListOf<Int>(R.drawable.ic_profile,R.drawable.ic_profile,R.drawable.ic_profile)
@@ -19,25 +21,18 @@ class Home : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        recyclerView = findViewById(R.id.recyclerView)
+        shopRecyclerView = findViewById(R.id.shop_recyclerView)
         userRecyclerView = findViewById(R.id.user_recyclerView)
-        database = FirebaseDatabase.getInstance().getReference("shop")
-        database.keepSynced(true)
-
-        val postListener = object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val post = dataSnapshot.getValue( )
-
-            }
-            override fun onCancelled(databaseError: DatabaseError) {
-                // Getting Post failed, log a message
-                Log.w("loadPost:onCancelled", databaseError.toException())
-                // ...
-            }
-        }
+        shopDatabase = FirebaseDatabase.getInstance().getReference("shop")
+        shopDatabase.keepSynced(true)
+        shopRecyclerView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+        userRecyclerView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+        readShopData()
 
 
-        val shops = listOf<Shops>(
+
+
+        /*val shops = listOf<Shops>(
             Shops("Test1", R.drawable.ic_profile),
             Shops("Test2", R.drawable.ic_shop),
             Shops("Test3", R.drawable.ic_profile),
@@ -48,7 +43,7 @@ class Home : AppCompatActivity() {
             Shops("Test8", R.drawable.ic_profile),
             Shops("Test9", R.drawable.ic_profile),
             Shops("Test10", R.drawable.ic_profile)
-        )
+        )*/
         val users = listOf<Users>(
             Users("Tee1",R.drawable.ic_profile),
             Users("Tee2",R.drawable.ic_profile),
@@ -61,13 +56,34 @@ class Home : AppCompatActivity() {
             Users("Tee9",R.drawable.ic_profile),
             Users("Tee10",R.drawable.ic_profile)
         )
-
-        recyclerView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
-        userRecyclerView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
-        recyclerView.adapter = MyAdapter(shops)
+        Log.e("users",users.toString())
         userRecyclerView.adapter = UserAdapter(users)
 
 
 
+    }
+
+    private fun readShopData(){
+        val postListener = object : ValueEventListener {
+            override fun onCancelled(p0: DatabaseError) {
+                // Getting Post failed, log a message
+                Log.w("Error", "loadPost:onCancelled")
+                // ...
+            }
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                Log.e("test","testing")
+                if(dataSnapshot!!.exists()){
+                    for ( i in dataSnapshot.children) {
+                        var shop = i.getValue(Shops::class.java)
+                        Log.e("what is I" , i.toString())
+                        shop!!.shopName = i.key.toString()
+                        shopList.add(shop!!)
+                    }
+                    Log.w("LoadData",shopList.toString())
+                    shopRecyclerView.adapter = MyAdapter(shopList)
+                }
+            }
+        }
+        shopDatabase.addValueEventListener(postListener)
     }
 }
