@@ -1,5 +1,16 @@
 package coe.project.passtick
 
-import android.bluetooth.BluetoothProfile
+import com.google.firebase.database.IgnoreExtraProperties
 
-data class Users (val username: String?, val profile: Int)
+
+@IgnoreExtraProperties
+data class Users (
+    val username: String? = "",
+    val email: String? = "",
+    val password: String? = "",
+    val fname: String? = "",
+    val lname: String? = "",
+    val profile: String? = "",
+    val role: String? = "customer",
+    val save: Long? = 0
+)
