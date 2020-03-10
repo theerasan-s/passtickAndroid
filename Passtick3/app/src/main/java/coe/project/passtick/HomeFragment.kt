@@ -52,13 +52,6 @@ class HomeFragment : Fragment() {
         }
 
 
-    override fun onStart() {
-        super.onStart()
-        readShopData()
-        readUserData()
-    }
-
-
     private fun readShopData(){
         Log.d("hello2" , "tmanranger")
         val postListener = object : ValueEventListener {

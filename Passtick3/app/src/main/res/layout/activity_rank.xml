@@ -36,14 +36,7 @@
                     android:id="@android:id/tabcontent"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent" >
-                    <shop
-                        android:id="@+id/shop"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent" />
-                    <customer
-                        android:id="@+id/customer"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent" />
+
                 </FrameLayout>
             </LinearLayout>
         </TabHost>

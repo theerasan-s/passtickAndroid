@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:itemBackground="@android:color/holo_orange_light"
+        android:background="#FFE5c6"
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"
         android:layout_above="@+id/nav_host_fragment"

@@ -13,21 +13,21 @@ import androidx.navigation.Navigation
 /**
  * A simple [Fragment] subclass.
  */
-class ProfileFragment : Fragment() {
-    private lateinit var profileView : View
+class RegisterFragment : Fragment() {
+    private lateinit var registerView: View
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        profileView = inflater.inflate(R.layout.fragment_profile,container,false)
-        val signOutButton: Button = profileView.findViewById(R.id.logout_button)
-        signOutButton.setOnClickListener { view: View ->
-            Navigation.findNavController(view).navigate(R.id.action_profileFragment_to_homeFragment)
+        registerView = inflater.inflate(R.layout.fragment_register , container ,false)
+        val registerButton: Button = registerView.findViewById<Button>(R.id.button2)
+        registerButton.setOnClickListener { view: View ->
+            Navigation.findNavController(view).navigate(R.id.action_registerFragment_to_profileFragment)
         }
-        return profileView
-        }
+        return registerView
     }
 
 
 
+}
