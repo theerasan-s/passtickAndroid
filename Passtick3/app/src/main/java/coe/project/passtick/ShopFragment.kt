@@ -11,6 +11,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.maps.*
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import com.google.firebase.database.*
 
 
@@ -38,6 +40,7 @@ class ShopFragment : Fragment() , OnMapReadyCallback{
         shopListRecyclerView = shopView.findViewById(R.id.shop_list_recycleView)
         shopListRecyclerView.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
         readShopData()
+
 
         return shopView
 
@@ -80,6 +83,9 @@ class ShopFragment : Fragment() , OnMapReadyCallback{
     override fun onMapReady(googleMap: GoogleMap?) {
         MapsInitializer.initialize(context)
         map = googleMap!!
+        val myPlace = LatLng(40.73, -73.99)  // this is New York
+        map.addMarker(MarkerOptions().position(myPlace).title("My Favorite City"))
+        map.moveCamera(CameraUpdateFactory.newLatLng(myPlace))
     }
 
 }
