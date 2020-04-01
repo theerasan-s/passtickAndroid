@@ -27,6 +27,7 @@
     <string name="nearby_shop">ร้านค้าที่อยู่ใกล้</string>
     <string name="test">test</string>
     <string name="username">userA</string>
+    <string name="map_key" translatable="false">AIzaSyDetpowStg9jBMbE4Izs2OeujIjFTD_mZk</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

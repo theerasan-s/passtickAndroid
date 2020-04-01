@@ -1,26 +1,32 @@
 package coe.project.passtick
 
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.gms.maps.*
 import com.google.firebase.database.*
+
 
 /**
  * A simple [Fragment] subclass.
  */
-class ShopFragment : Fragment() {
+class ShopFragment : Fragment() , OnMapReadyCallback{
 
     private lateinit var shopView: View
     private lateinit var shopListRecyclerView : RecyclerView
     private var  shopList = mutableListOf<Shops>()
     private val ref : DatabaseReference = FirebaseDatabase.getInstance().getReference("shop")
+    private lateinit var mapFragment: SupportMapFragment
+    private lateinit var map: GoogleMap
+    lateinit var mapView: MapView
+
 
 
     override fun onCreateView(
@@ -32,9 +38,11 @@ class ShopFragment : Fragment() {
         shopListRecyclerView = shopView.findViewById(R.id.shop_list_recycleView)
         shopListRecyclerView.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
         readShopData()
+
         return shopView
 
     }
+
 
     fun readShopData(){
         val postListener = object : ValueEventListener {
@@ -56,6 +64,22 @@ class ShopFragment : Fragment() {
 
         }
         ref.addValueEventListener(postListener)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        mapView = view.findViewById(R.id.maps)
+        if(mapView != null){
+            mapView.onCreate(null)
+            mapView.onResume()
+            mapView.getMapAsync(this)
+        }
+
+    }
+
+    override fun onMapReady(googleMap: GoogleMap?) {
+        MapsInitializer.initialize(context)
+        map = googleMap!!
     }
 
 }

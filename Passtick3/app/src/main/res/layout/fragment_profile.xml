@@ -34,125 +34,143 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <ImageView
-                    android:id="@+id/profile_image"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="16dp"
-                    android:background="@drawable/profile_background"
-                    android:contentDescription="@string/_description"
-                    android:maxWidth="100dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_profile" />
-
-                <ImageButton
-                    android:id="@+id/edit_button"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginStart="50dp"
-                    android:layout_marginTop="120dp"
-                    android:background="@drawable/profile_background"
-                    android:maxWidth="100dp"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:srcCompat="@drawable/edit_icon" />
-
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="wrap_content"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="185dp"
-                    android:text="TextView"
-                    android:textColor="@color/white"
-                    android:textSize="30sp" />
+                    android:paddingBottom="20dp">
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/card_profile"
-                    android:layout_width="350dp"
-                    android:layout_height="100dp"
-                    android:layout_marginStart="32dp"
-                    android:layout_marginTop="250dp"
-                    android:layout_marginEnd="32dp"
-                    android:elevation="2dp"
-                    android:translationZ="2dp"
-                    android:stateListAnimator="@null"
-                    app:cardCornerRadius="10dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent">
+                    <ImageView
+                        android:id="@+id/profile_image"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/profile_background"
+                        android:contentDescription="@string/_description"
+                        android:maxWidth="100dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.060000002"
+                        app:srcCompat="@drawable/ic_profile" />
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                    <ImageButton
+                        android:id="@+id/edit_button"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="50dp"
+                        android:background="@drawable/profile_background"
+                        android:maxWidth="100dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.595"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.415"
+                        app:srcCompat="@drawable/edit_icon" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:text="TextView"
+                        android:textColor="@color/white"
+                        android:textSize="30sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/profile_image" />
 
 
-                        <TextView
-                            android:id="@+id/reduce_num_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="16dp"
-                            android:text="2000000"
-                            android:textColor="@color/orange_app"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.16"
-                            app:layout_constraintStart_toStartOf="parent" />
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_profile"
+                        android:layout_width="350dp"
+                        android:layout_height="100dp"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="32dp"
+                        android:elevation="2dp"
+                        android:stateListAnimator="@null"
+                        android:translationZ="2dp"
+                        app:cardCornerRadius="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textView4"
+                        >
 
-                        <TextView
-                            android:id="@+id/reduce_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:text="reduce"
-                            app:layout_constraintEnd_toEndOf="@+id/reduce_num_text"
-                            app:layout_constraintStart_toStartOf="@+id/reduce_num_text"
-                            app:layout_constraintTop_toTopOf="parent" />
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="353dp"
+                            android:layout_height="match_parent">
 
-                        <TextView
-                            android:id="@+id/money_num_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="money"
-                            app:layout_constraintBaseline_toBaselineOf="@+id/reduce_text"
-                            app:layout_constraintEnd_toEndOf="@+id/money_text"
-                            app:layout_constraintStart_toStartOf="@+id/money_text" />
 
-                        <TextView
-                            android:id="@+id/money_text"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="24dp"
-                            android:layout_marginBottom="16dp"
-                            android:text="400000"
-                            android:textColor="@color/orange_app"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.84"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/money_num_text" />
+                            <TextView
+                                android:id="@+id/reduce_num_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp"
+                                android:text="2000000"
+                                android:textColor="@color/orange_app"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.16"
+                                app:layout_constraintStart_toStartOf="parent" />
 
-                        <androidx.constraintlayout.widget.Group
-                            android:id="@+id/group"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            <TextView
+                                android:id="@+id/reduce_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:text="reduce"
+                                app:layout_constraintEnd_toEndOf="@+id/reduce_num_text"
+                                app:layout_constraintStart_toStartOf="@+id/reduce_num_text"
+                                app:layout_constraintTop_toTopOf="parent" />
 
-                        <androidx.constraintlayout.widget.Group
-                            android:id="@+id/group2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            <TextView
+                                android:id="@+id/money_num_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="money"
+                                app:layout_constraintBaseline_toBaselineOf="@+id/reduce_text"
+                                app:layout_constraintEnd_toEndOf="@+id/money_text"
+                                app:layout_constraintStart_toStartOf="@+id/money_text" />
 
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                            <TextView
+                                android:id="@+id/money_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="24dp"
+                                android:layout_marginBottom="16dp"
+                                android:text="400000"
+                                android:textColor="@color/orange_app"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.84"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/money_num_text" />
 
-                </com.google.android.material.card.MaterialCardView>
+                            <androidx.constraintlayout.widget.Group
+                                android:id="@+id/group"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <androidx.constraintlayout.widget.Group
+                                android:id="@+id/group2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </FrameLayout>
 
             <TextView
