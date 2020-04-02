@@ -21,9 +21,6 @@ class QrFragment : Fragment() {
     private lateinit var scanLayout : FrameLayout
     var shopName = ""
 
-
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,17 +36,18 @@ class QrFragment : Fragment() {
         zXingScannerView.setResultHandler {
             result -> result.getText().toString()
 
+
             if (result.getText().toString() == "EatAtHome"){
                 zXingScannerView.stopCamera()
                 Toast.makeText(activity,"QR = " + result,Toast.LENGTH_LONG).show()
                 shopName = "Eat at Home"
-                findNavController().navigate(QrFragmentDirections.actionQrFragmentToFormFragment(shopName))
+                findNavController().navigate(QrFragmentDirections.actionQrFragmentToFormFragment(shopName,"Eat At Home"))
             }
             else if(result.getText().toString() == "Mali"){
                 zXingScannerView.stopCamera()
                 Toast.makeText(activity,"QR = " + result,Toast.LENGTH_LONG).show()
                 shopName = "Mali Cakery"
-                findNavController().navigate(QrFragmentDirections.actionQrFragmentToFormFragment(shopName))
+                findNavController().navigate(QrFragmentDirections.actionQrFragmentToFormFragment(shopName ,"Mali Cakery Homemade"))
             }
 
         }

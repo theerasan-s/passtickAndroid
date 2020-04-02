@@ -58,6 +58,11 @@
         android:id="@+id/formFragment"
         android:name="coe.project.passtick.FormFragment"
         android:label="FormFragment" >
-        <argument android:name="shopName" />
+        <argument
+            android:name="shopName"
+            app:argType="string" />
+        <argument
+            android:name="ref"
+            app:argType="string" />
     </fragment>
 </navigation>

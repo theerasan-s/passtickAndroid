@@ -51,17 +51,20 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                Log.d("please" ,"what is going on")
-                if(dataSnapshot!!.exists()) {
-                    userList.clear()
-                    for(userData in dataSnapshot.children) {
-                        var user = userData.getValue(Users::class.java)
-                        if(user?.role == "customer"){
+                Log.d("test","testing")
+                var allCost:Long = 0
+                var allReduce:Long = 0
+                userList.clear()
+                if(dataSnapshot!!.exists()){
+                    for ( i in dataSnapshot.children) {
+                        var user = i.getValue(Users::class.java)
+                        if(user!!.role == "customer"){
+                            user.key = i.key.toString()
                             userList.add(user!!)
-                        }
                     }
                 }
             }
+        }
         }
         userDatabase.addValueEventListener(postListener)
     }
