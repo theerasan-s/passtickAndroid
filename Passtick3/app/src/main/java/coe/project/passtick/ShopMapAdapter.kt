@@ -35,7 +35,7 @@ class ShopMapAdapter( val items: List<Shops>, val shopFragment:ShopFragment) : R
     override fun onBindViewHolder(holder: ShopHolder, position: Int) {
         val shop = items[position]
 
-        holder.view.shop_name_text.text = shop.shopName
+        holder.view.shop_name.text = shop.shopName
         holder.view.shop_profile.setImageResource(R.drawable.ic_profile)
         Picasso.get().load(shop.logo).into(holder.view.shop_profile)
         holder.itemView.setOnClickListener {

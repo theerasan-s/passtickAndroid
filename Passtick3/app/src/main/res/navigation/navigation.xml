@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
     app:startDestination="@id/homeFragment">
     <fragment
@@ -23,7 +22,11 @@
     <fragment
         android:id="@+id/qrFragment"
         android:name="coe.project.passtick.QrFragment"
-        android:label="QrFragment" />
+        android:label="QrFragment" >
+        <action
+            android:id="@+id/action_qrFragment_to_formFragment"
+            app:destination="@id/formFragment" />
+    </fragment>
     <fragment
         android:id="@+id/shopFragment"
         android:name="coe.project.passtick.ShopFragment"
@@ -50,5 +53,11 @@
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/formFragment"
+        android:name="coe.project.passtick.FormFragment"
+        android:label="FormFragment" >
+        <argument android:name="shopName" />
     </fragment>
 </navigation>

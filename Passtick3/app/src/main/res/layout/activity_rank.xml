@@ -16,27 +16,62 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="30dp"
-            android:text="@string/rank"
+            android:text="@string/ranking"
             android:textColor="#7A3803"
             android:textSize="35sp"
             android:textStyle="bold" />
-        <TabHost xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/tabhost"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent" >
+        <TabHost
+            android:id="@+id/tab_host"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:tabIndicatorColor="@android:color/holo_orange_dark"
+            android:layout_gravity="center_horizontal">
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent" >
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
                 <TabWidget
                     android:id="@android:id/tabs"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    ></TabWidget>
+
                 <FrameLayout
                     android:id="@android:id/tabcontent"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent" >
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
+                    <RelativeLayout
+                        android:id="@+id/user_rank"
+                        app:tabIndicatorColor="@color/orange_app"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:layout_marginBottom="60dp">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/user_rank_recycleview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/shop_rank"
+                        app:tabIndicatorColor="@color/orange_app"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:layout_marginBottom="60dp">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/shop_rank_recycleview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+                    </RelativeLayout>
                 </FrameLayout>
             </LinearLayout>
         </TabHost>

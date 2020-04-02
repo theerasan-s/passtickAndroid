@@ -12,5 +12,6 @@ data class Users (
     val lname: String? = "",
     val profile: String? = "",
     val role: String? = "customer",
-    val save: Long? = 0
+    val save: Long? = 0,
+    var rank: Int=0
 )

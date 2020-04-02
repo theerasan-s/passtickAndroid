@@ -78,7 +78,7 @@ class HomeFragment : Fragment() {
                     Log.w("LoadData",shopList.toString())
                     costText.text = allCost.toString()
                     reduceText.text = allReduce.toString()
-                    shopRecyclerView.adapter = MyAdapter(shopList)
+
                 }
 
             }

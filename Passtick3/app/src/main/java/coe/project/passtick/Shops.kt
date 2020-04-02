@@ -13,5 +13,6 @@ data class Shops (
     val pieces: Long?=0,
     val shoplink: String?="",
     val tel: String?="",
-    var shopName: String=""
+    var shopName: String="",
+    var rank: Int=0
 )

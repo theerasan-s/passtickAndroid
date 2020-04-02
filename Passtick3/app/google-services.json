@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "427787465303-80gr6v5jcp0je9vg61hu54k2gt6mqss0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "coe.project.passtick",
+            "certificate_hash": "e30a2d8baca6dde8619164fbd34e9697cf5c32e3"
+          }
+        },
+        {
           "client_id": "427787465303-a9aaodm8poab7e6nk3v2ql2cg1v05nui.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

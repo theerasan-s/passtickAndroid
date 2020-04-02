@@ -4,8 +4,6 @@ package coe.project.passtick
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 //import com.squareup.picasso.Picasso
@@ -29,7 +27,7 @@ class MyAdapter( val items: List<Shops>) : RecyclerView.Adapter<MyAdapter.ShopHo
 
     override fun onBindViewHolder(holder: ShopHolder, position: Int) {
         val shop = items[position]
-        holder.view.shop_name_text.text = shop.shopName
+        holder.view.shop_name.text = shop.shopName
         holder.view.shop_profile.setImageResource(R.drawable.ic_profile)
         Picasso.get().load(shop.logo).into(holder.view.shop_profile)
     }
