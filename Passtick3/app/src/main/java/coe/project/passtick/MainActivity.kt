@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
+import com.facebook.CallbackManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthException
@@ -23,13 +24,14 @@ import kotlinx.coroutines.coroutineScope
 class MainActivity : AppCompatActivity() {
     private lateinit var bottomNavigation : BottomNavigationView
     lateinit var navController: NavController
-
     private lateinit var userDatabase: DatabaseReference
+    lateinit var callbackManager: CallbackManager
     var userList = mutableListOf<Users>()
     var logedIn: Boolean = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        callbackManager = CallbackManager.Factory.create()
         userDatabase = FirebaseDatabase.getInstance().getReference("user")
         readUserData()
         userDatabase.keepSynced(true)

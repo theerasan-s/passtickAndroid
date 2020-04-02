@@ -23,7 +23,13 @@ class FormFragment : Fragment() {
     ): View? {
         FormView = inflater.inflate(R.layout.activity_form, container, false)
         shopNameTextView = FormView.findViewById(R.id.shop_name)
-        var args = FormFragmentArgs.fromBundle(arguments)
+        arguments?.let {
+            val args = FormFragmentArgs.fromBundle(arguments!!)
+            val shopName =  args.shopName
+            shopNameTextView.text = shopName
+        }
+
+        //var args = FormFragmentArgs.fromBundle(arguments)
         return FormView
         }
     }
