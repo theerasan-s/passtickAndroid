@@ -21,12 +21,11 @@ import com.google.firebase.database.*
  */
 class ShopFragment : Fragment() , OnMapReadyCallback{
 
-    private lateinit var shopView: View
+    lateinit var shopView: View
     private lateinit var shopListRecyclerView : RecyclerView
     private var  shopList = mutableListOf<Shops>()
     private val ref : DatabaseReference = FirebaseDatabase.getInstance().getReference("shop")
-    private lateinit var mapFragment: SupportMapFragment
-    private lateinit var map: GoogleMap
+    lateinit var map: GoogleMap
     lateinit var mapView: MapView
 
 
@@ -39,6 +38,7 @@ class ShopFragment : Fragment() , OnMapReadyCallback{
         val ref : DatabaseReference = FirebaseDatabase.getInstance().getReference("shop")
         shopListRecyclerView = shopView.findViewById(R.id.shop_list_recycleView)
         shopListRecyclerView.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+
         readShopData()
 
 
@@ -61,7 +61,7 @@ class ShopFragment : Fragment() , OnMapReadyCallback{
                         shop!!.shopName = item.key.toString()
                         shopList.add(shop)
                     }
-                    shopListRecyclerView.adapter = MyAdapter(shopList)
+                    shopListRecyclerView.adapter = ShopMapAdapter(shopList,this@ShopFragment)
                 }
             }
 
@@ -83,7 +83,7 @@ class ShopFragment : Fragment() , OnMapReadyCallback{
     override fun onMapReady(googleMap: GoogleMap?) {
         MapsInitializer.initialize(context)
         map = googleMap!!
-        val myPlace = LatLng(40.73, -73.99)  // this is New York
+        val myPlace = LatLng(16.457618,102.8260633)  // this is New York
         map.addMarker(MarkerOptions().position(myPlace).title("My Favorite City"))
         map.moveCamera(CameraUpdateFactory.newLatLng(myPlace))
     }
