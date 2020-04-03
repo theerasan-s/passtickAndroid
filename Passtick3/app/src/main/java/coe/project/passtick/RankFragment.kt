@@ -44,7 +44,6 @@ class RankFragment : Fragment() {
         shopDatabase = FirebaseDatabase.getInstance().getReference("shop")
         userDatabase = FirebaseDatabase.getInstance().getReference("user")
 
-
         tabHost = rankView.findViewById(R.id.tab_host);
         tabHost.setup()
 
@@ -72,6 +71,8 @@ class RankFragment : Fragment() {
         shopRecyclerView.adapter = ShopRank(shopList)
         userRecyclerView.adapter = UserRank(userList)
         shopDatabase.keepSynced(true)
+        userDatabase.keepSynced(true)
+        userRecyclerView.adapter = UserRank(userList)
 
         readUserData()
         readShopData()
@@ -104,6 +105,8 @@ class RankFragment : Fragment() {
                         shopList.add(shop!!)
                     }
                     Log.w("LoadData",shopList.toString())
+                    shopList.sortBy {shop -> shop.pieces}
+                    shopList.reverse()
                     for(j in 0 until shopList.size) {
                         shopList[j].rank = j + 1
                     }
@@ -133,6 +136,8 @@ class RankFragment : Fragment() {
                         }
 
                     }
+                    userList.sortBy { user ->  user.save}
+                    userList.reverse()
                     for(j in 0 until userList.size) {
                         userList[j].rank = j + 1
                     }
