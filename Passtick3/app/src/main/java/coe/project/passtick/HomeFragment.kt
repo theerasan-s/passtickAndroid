@@ -45,6 +45,7 @@ class HomeFragment : Fragment() {
         shopRecyclerView.adapter = MyAdapter(shopList)
         userRecyclerView.adapter = UserAdapter(userList)
         shopDatabase.keepSynced(true)
+        userDatabase.keepSynced(true)
         readUserData()
         readShopData()
 
@@ -75,9 +76,12 @@ class HomeFragment : Fragment() {
                         shop!!.shopName = i.key.toString()
                         shopList.add(shop!!)
                     }
+                    shopList.sortBy {shop -> shop.pieces}
+                    shopList.reverse()
                     Log.w("LoadData",shopList.toString())
                     costText.text = allCost.toString()
                     reduceText.text = allReduce.toString()
+                    shopRecyclerView.adapter = MyAdapter(shopList)
 
                 }
 
@@ -101,6 +105,11 @@ class HomeFragment : Fragment() {
                         var user = userData.getValue(Users::class.java)
                         if(user?.role == "customer"){
                             userList.add(user!!)
+                        }
+                        userList.sortBy { user ->  user.save}
+                        userList.reverse()
+                        for (j in 0 until userList.size){
+                            userList[j].rank = j+1
                         }
 
                     }

@@ -2,6 +2,7 @@ package coe.project.passtick
 
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -20,7 +21,7 @@ class QrFragment : Fragment() {
     private lateinit var zXingScannerView : ZXingScannerView
     private lateinit var QRView : View
     private lateinit var scanLayout : FrameLayout
-    var shopName = ""
+    lateinit var shopName : String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,8 +38,9 @@ class QrFragment : Fragment() {
         zXingScannerView.setResultHandler {
             result -> result.getText().toString()
 
+            Log.d("qrResult",result.text.toString())
 
-            if (result.getText().toString() == "EatAtHome"){
+            if (result.getText().toString() == "Eat At Home"){
                 zXingScannerView.stopCamera()
                 Toast.makeText(activity,"QR = " + result,Toast.LENGTH_LONG).show()
                 shopName = "Eat at Home"

@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+
     private fun readUserData() {
         Log.d("hello" , "tmanranger2")
         val postListener = object : ValueEventListener {
@@ -61,12 +62,17 @@ class MainActivity : AppCompatActivity() {
                         if(user!!.role == "customer"){
                             user.key = i.key.toString()
                             userList.add(user!!)
+                        }
                     }
+                    userList.sortBy { user ->  user.save}
+                    userList.reverse()
+                    for (j in 0 until userList.size){
+                        userList[j].rank = j+1
+                    }
+
                 }
             }
         }
-        }
         userDatabase.addValueEventListener(postListener)
     }
-
 }
