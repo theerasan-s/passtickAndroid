@@ -51,8 +51,8 @@ class ProfileFragment : Fragment() {
         // set component value
         username.text = user.username
         reduceNum.text = user.save.toString()
-        fullname.text = "name: ${user.fname} ${user.lname}"
-        email.text = "email: ${user.email}"
+        fullname.text = "ชื่อ : ${user.fname} ${user.lname}"
+        email.text = "อีเมล : ${user.email}"
         if(user.profile != ""){
             Picasso.get().load(user.profile).into(profileImage)
         }

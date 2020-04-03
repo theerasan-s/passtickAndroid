@@ -108,12 +108,13 @@
 
 
                             <TextView
-                                android:id="@+id/reduce_num_text"
+                                android:id="@+id/rank_num_text"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="16dp"
-                                android:text="2000000"
-                                android:textColor="@color/orange_app"
+                                android:text="1"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:background="@drawable/profile_rank_bg"
                                 android:textSize="20sp"
                                 android:textStyle="bold"
                                 app:layout_constraintBottom_toBottomOf="parent"
@@ -122,26 +123,26 @@
                                 app:layout_constraintStart_toStartOf="parent" />
 
                             <TextView
-                                android:id="@+id/reduce_text"
+                                android:id="@+id/rank_text"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="16dp"
-                                android:text="reduce"
-                                app:layout_constraintEnd_toEndOf="@+id/reduce_num_text"
-                                app:layout_constraintStart_toStartOf="@+id/reduce_num_text"
+                                android:text="อันดับ"
+                                app:layout_constraintEnd_toEndOf="@+id/rank_num_text"
+                                app:layout_constraintStart_toStartOf="@+id/rank_num_text"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
-                                android:id="@+id/money_num_text"
+                                android:id="@+id/reduce_text"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="money"
-                                app:layout_constraintBaseline_toBaselineOf="@+id/reduce_text"
-                                app:layout_constraintEnd_toEndOf="@+id/money_text"
-                                app:layout_constraintStart_toStartOf="@+id/money_text" />
+                                android:text="ลดพลาสติก"
+                                app:layout_constraintBaseline_toBaselineOf="@+id/rank_text"
+                                app:layout_constraintEnd_toEndOf="@+id/reduce_num_text"
+                                app:layout_constraintStart_toStartOf="@+id/reduce_num_text" />
 
                             <TextView
-                                android:id="@+id/money_text"
+                                android:id="@+id/reduce_num_text"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="24dp"
@@ -152,9 +153,10 @@
                                 android:textStyle="bold"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.84"
+                                app:layout_constraintHorizontal_bias="0.795"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@+id/money_num_text" />
+                                app:layout_constraintTop_toBottomOf="@+id/reduce_text"
+                                app:layout_constraintVertical_bias="1.0" />
 
                             <androidx.constraintlayout.widget.Group
                                 android:id="@+id/group"
@@ -174,28 +176,16 @@
             </FrameLayout>
 
             <TextView
-                android:id="@+id/profile_rank_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="48dp"
-                android:layout_marginTop="48dp"
-                android:text="rank : 1"
-                android:textColor="@color/brown_app"
-                android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/frame_container" />
-
-            <TextView
                 android:id="@+id/profile_name_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="48dp"
-                android:layout_marginTop="24dp"
-                android:text="name : manee memeow"
+                android:layout_marginTop="48dp"
+                android:text="ชื่อ : manee memeow"
                 android:textColor="@color/brown_app"
                 android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/profile_rank_text" />
+                app:layout_constraintTop_toBottomOf="@+id/frame_container" />
 
             <TextView
                 android:id="@+id/profile_email_text"
@@ -203,7 +193,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="48dp"
                 android:layout_marginTop="24dp"
-                android:text="email : manee@meow.com"
+                android:text="อีเมล : manee@meow.com"
                 android:textColor="@color/brown_app"
                 android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -219,7 +209,7 @@
                 android:elevation="2dp"
                 android:translationZ="2dp"
                 android:stateListAnimator="@null"
-                android:text="Sign Out"
+                android:text="ออกจากระบบ"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
