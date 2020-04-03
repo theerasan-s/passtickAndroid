@@ -38,4 +38,6 @@
     <string name="shop_card_title">Cafe1</string>
     <string name="call">โทร :</string>
     <string name="phone_number">0123456789</string>
+    <string name="login_recommend_text">เข้าสู่ระบบด้วย</string>
+    <string name="login_welcome_text">ยินดีต้อนรับ</string>
 </resources>

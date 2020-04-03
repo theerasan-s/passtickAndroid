@@ -44,6 +44,8 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
+
     private fun readUserData() {
         Log.d("hello" , "tmanranger2")
         val postListener = object : ValueEventListener {

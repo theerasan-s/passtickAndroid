@@ -10,7 +10,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.squareup.picasso.Picasso
+import de.hdodenhof.circleimageview.CircleImageView
 
 /**
  * A simple [Fragment] subclass.
@@ -25,12 +28,13 @@ class HomeFragment : Fragment() {
     private var shopList = mutableListOf<Shops>()
     private var userList = mutableListOf<Users>()
     private lateinit var homeView: View
-
+    private lateinit var mAuth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        mAuth = FirebaseAuth.getInstance()
         homeView =  inflater.inflate(R.layout.activity_home,container,false)
         costText = homeView.findViewById(R.id.money_num)
         reduceText = homeView.findViewById(R.id.reduce_num)
@@ -48,6 +52,18 @@ class HomeFragment : Fragment() {
         userDatabase.keepSynced(true)
         readUserData()
         readShopData()
+        val profile = homeView.findViewById<CircleImageView>(R.id.profile_image)
+        if(mAuth.currentUser != null){
+            val userList = (activity as MainActivity).userList
+            val user = userList.find { e -> e.email == mAuth.currentUser!!.email }
+            if(user != null){
+                Picasso.get().load(user.profile).into(profile)
+            } else{
+                profile.setImageResource(R.drawable.ic_profile)
+            }
+        } else {
+            profile.setImageResource(R.drawable.ic_profile)
+        }
 
         return homeView
         }

@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -14,6 +15,7 @@ import com.google.android.gms.maps.*
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.firebase.database.*
+import kotlinx.android.synthetic.main.activity_shop.*
 
 
 /**
@@ -35,9 +37,10 @@ class ShopFragment : Fragment() , OnMapReadyCallback{
         savedInstanceState: Bundle?
     ): View? {
         shopView = inflater.inflate(R.layout.activity_shop , container , false)
-        val ref : DatabaseReference = FirebaseDatabase.getInstance().getReference("shop")
         shopListRecyclerView = shopView.findViewById(R.id.shop_list_recycleView)
         shopListRecyclerView.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+        val shopCardTitle: TextView = shopView.findViewById(R.id.shop_card_title)
+        val phoneNumber: TextView = shopView.findViewById(R.id.phone_number)
 
         readShopData()
 
@@ -45,6 +48,7 @@ class ShopFragment : Fragment() , OnMapReadyCallback{
         return shopView
 
     }
+
 
 
     fun readShopData(){
@@ -83,9 +87,11 @@ class ShopFragment : Fragment() , OnMapReadyCallback{
     override fun onMapReady(googleMap: GoogleMap?) {
         MapsInitializer.initialize(context)
         map = googleMap!!
-        val myPlace = LatLng(16.457618,102.8260633)  // this is New York
-        map.addMarker(MarkerOptions().position(myPlace).title("My Favorite City"))
-        map.moveCamera(CameraUpdateFactory.newLatLng(myPlace))
+        shop_card_title.text = shopList[0].shopName
+        phone_number.text = shopList[0].tel
+        val firstMapLocation:LatLng = LatLng(shopList[0].lat!!,shopList[0].lng!!)
+        map.addMarker(MarkerOptions().position(firstMapLocation).title(shopList[0].shopName))
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(firstMapLocation, 18F),5000,null)
     }
 
 }
